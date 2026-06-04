@@ -1141,64 +1141,64 @@
       <div class="container mx-auto px-4">
         <!-- Overall Rating -->
 
-        <div class="overall-rating text-center mb-8 md:mb-12 scroll-scale-in">
-          <div
-            class="inline-flex flex-col items-center bg-white p-5 md:p-8 rounded-2xl shadow-custom border border-grey-200 max-w-md mx-auto"
-          >
-            <!-- Google Full Name Logo at the top -->
-            <div class="mb-4">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png"
-                alt="Google Logo"
-                class="w-32 h-auto md:w-36 mx-auto"
-                onerror="this.style.display = 'none'"
-              />
-            </div>
+        <div class="overall-rating text-center mb-8 md:mb-12">
+  <div
+    class="inline-flex flex-col items-center bg-white p-6 md:p-8 rounded-xl shadow-md border border-gray-200 max-w-md mx-auto"
+  >
+    <!-- Google Logo + Reviews -->
+    <div class="flex items-center justify-center gap-3 mb-4">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+        alt="Google"
+        class="w-14 h-14"
+      />
 
-            <!-- Verified Customer Reviews Heading -->
-            <h3 class="text-xl md:text-2xl font-bold text-grey-800 mb-4">
-              Verified Customer Reviews
-            </h3>
-
-            <!-- Star Ratings and Review Count -->
-            <div class="flex flex-col items-center mb-5">
-              <div class="text-4xl md:text-5xl font-bold text-primary-red mb-2">
-                5.0
-              </div>
-              <div class="flex items-center justify-center mb-2">
-                <i class="fas fa-star text-yellow-400 text-lg md:text-xl"></i>
-                <i class="fas fa-star text-yellow-400 text-lg md:text-xl"></i>
-                <i class="fas fa-star text-yellow-400 text-lg md:text-xl"></i>
-                <i class="fas fa-star text-yellow-400 text-lg md:text-xl"></i>
-                <i class="fas fa-star text-yellow-400 text-lg md:text-xl"></i>
-              </div>
-            </div>
-
-            <!-- Go to Reviews Button -->
-            <a
-              href="https://www.google.com/search?hl=en-IN&gl=in&q=Dr+Ekhlaq+Ahmed+(+M+R+Dental+care(maximum+regenerative+)clinic+),+M.R.+Dental+Care+Clinic,+887,+near+Salam+Hotel,+Churiwalan,+Jama+Masjid,+New+Delhi,+Delhi+110006&ludocid=555303829108661679&lsig=AB86z5XFaUX2EsI2mqLNrFwjoVxw&hl=en&gl=IN#lrd=0x390cfdc994434315:0x7b4d5e3f46f9daf,1"
-              target="_blank"
-              class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4285F4] via-[#34A853] to-[#FBBC05] text-white font-bold py-3 px-6 rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 min-h-[44px] border border-grey-200 shadow-md w-full group"
-            >
-              <i class="fab fa-google mr-2"></i>
-              View All Reviews
-              <i
-                class="fas fa-external-link-alt ml-2 text-sm group-hover:translate-x-1 transition-transform duration-300"
-              ></i>
-            </a>
-
-            <!-- Optional: Small link below button -->
-            <div class="mt-4 text-center">
-              <a
-                href="https://www.google.com/search?hl=en-IN&gl=in&q=Dr+Ekhlaq+Ahmed+(+M+R+Dental+care(maximum+regenerative+)clinic+),+M.R.+Dental+Care+Clinic,+887,+near+Salam+Hotel,+Churiwalan,+Jama+Masjid,+New+Delhi,+Delhi+110006&ludocid=555303829108661679&lsig=AB86z5XFaUX2EsI2mqLNrFwjoVxw&hl=en&gl=IN#lrd=0x390cfdc994434315:0x7b4d5e3f46f9daf,1"
-                target="_blank"
-                class="text-[#4285F4] font-semibold hover:underline text-sm md:text-base inline-flex items-center"
-              >
-                <i class="fas fa-pen mr-2"></i> Share Your Experience
-              </a>
-            </div>
-          </div>
+      <div class="text-left">
+        <div class="text-3xl font-medium tracking-tight">
+          <span class="text-[#4285F4]">G</span
+          ><span class="text-[#EA4335]">o</span
+          ><span class="text-[#FBBC05]">o</span
+          ><span class="text-[#4285F4]">g</span
+          ><span class="text-[#34A853]">l</span
+          ><span class="text-[#EA4335]">e</span>
         </div>
+
+        <div class="text-2xl font-bold text-black leading-none">
+          Reviews
+        </div>
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-4xl font-bold text-black">5.0</span>
+
+      <div class="flex">
+        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+        <i class="fas fa-star text-yellow-400 text-2xl"></i>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="text-lg font-semibold text-black">
+      Excellent
+      <span class="text-gray-500 font-normal">| Based on Reviews</span>
+    </p>
+
+    <!-- Button -->
+    <a
+      href="https://share.google/t6jzwonZhvZnI9Oyz"
+      target="_blank"
+      class="mt-5 inline-flex items-center gap-2 bg-[#4285F4] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3367D6] transition"
+    >
+      <i class="fab fa-google"></i>
+      View Reviews
+    </a>
+  </div>
+</div>
 
         <div class="l:w-2/3 mx-auto text-center scroll-fade-in">
           <h1
