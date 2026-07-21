@@ -610,34 +610,12 @@
         max-height: 90vh;
       }
 
-      .lightbox-media {
+      .lightbox-img {
         max-width: 100%;
         max-height: 80vh;
         object-fit: contain;
         border-radius: 12px;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      }
-
-      .lightbox-video {
-        background: #000;
-      }
-
-      .video-play-badge {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        background: rgba(211, 47, 47, 0.92);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
-        pointer-events: none;
-        z-index: 2;
       }
 
       .lightbox-close {
@@ -1848,19 +1826,8 @@
           id="lightboxImage"
           src=""
           alt="Enlarged dental case image"
-          class="lightbox-media"
+          class="lightbox-img"
         />
-        <video
-          id="lightboxVideo"
-          class="lightbox-media lightbox-video"
-          controls
-          playsinline
-          preload="metadata"
-          style="display: none"
-        >
-          <source id="lightboxVideoSource" src="" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
 
@@ -3978,45 +3945,6 @@
         const galleryContainer = document.getElementById("imageGallery");
         let currentFilter = "all";
         let currentImages = [...imageList];
-        const videoExtensions = ["mp4", "webm", "ogg", "ogv", "mov", "m4v"];
-
-        function getFileExtension(filePath = "") {
-          return filePath
-            .split("?")[0]
-            .split("#")[0]
-            .split(".")
-            .pop()
-            .toLowerCase();
-        }
-
-        function getMediaType(media) {
-          const declaredType = (media.type || media.mediaType || "").toLowerCase();
-
-          if (declaredType === "video" || declaredType.startsWith("video/")) {
-            return "video";
-          }
-
-          if (declaredType === "image" || declaredType.startsWith("image/")) {
-            return "image";
-          }
-
-          const extension = getFileExtension(media.filename || media.path);
-          return videoExtensions.includes(extension) ? "video" : "image";
-        }
-
-        function getVideoMimeType(media) {
-          const extension = getFileExtension(media.path || media.filename);
-          const mimeTypes = {
-            mp4: "video/mp4",
-            webm: "video/webm",
-            ogg: "video/ogg",
-            ogv: "video/ogg",
-            mov: "video/quicktime",
-            m4v: "video/mp4",
-          };
-
-          return mimeTypes[extension] || "video/mp4";
-        }
 
         // // Categories for images
         // const categories = {
@@ -4040,47 +3968,16 @@
               impactionAndSurgery: "Impaction & Surgery",
               happyPatients: "Happy Patients",
               ourChallengingWork: "Our Challenging Work",
-              sterilizationHygiene: "Sterilization & Hygiene",
-              digitalImpressionScan: "Digital Impression Scan",
               all: "Gallery",
             };
 
-            const categoryName = categoryTitles[category] || "Gallery";
-            const mediaType = getMediaType(image);
-            const mediaAlt = `${categoryName} case ${index + 1} - MR Dental Clinic`;
-            const mediaMarkup =
-              mediaType === "video"
-                ? `
-            <video
-              class="masonry-image masonry-video"
-              muted
-              playsinline
-              preload="metadata"
-              aria-label="${mediaAlt}"
-            >
-              <source src="${image.path}" type="${getVideoMimeType(image)}">
-              Your browser does not support the video tag.
-            </video>
-            <div class="video-play-badge" aria-hidden="true">
-              <i class="fas fa-play"></i>
-            </div>
-          `
-                : `
-            <img
-              src="${image.path}"
-              alt="${mediaAlt}"
-              class="masonry-image"
-              loading="lazy"
-              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"%3E%3Crect width=\"400\" height=\"400\" fill=\"%23f3f4f6\"/%3E%3Cpath d=\"M200,120 L280,200 L200,280 L120,200 Z\" fill=\"%23d1d5db\" opacity=\"0.3\"/%3E%3C/svg%3E'"
-            >
-          `;
+            const categoryName = categoryTitles[category];
 
             const imageItem = document.createElement("div");
             imageItem.className = `masonry-item scroll-scale-in ${category}`;
             imageItem.style.animationDelay = `${(index % 8) * 0.1}s`;
             imageItem.dataset.index = index;
             imageItem.dataset.category = category;
-            imageItem.dataset.mediaType = mediaType;
 
             // Add premium badge for every 5th image
             // const premiumBadge =
@@ -4091,12 +3988,19 @@
             //     : "";
 
             imageItem.innerHTML = `
+          
           <div class="relative">
-            ${mediaMarkup}
+            <img 
+              src="${image.path}" 
+              alt="${categoryName} case ${index + 1} - MR Dental Clinic" 
+              class="masonry-image"
+              loading="lazy"
+              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\"%3E%3Crect width=\"400\" height=\"400\" fill=\"%23f3f4f6\"/%3E%3Cpath d=\"M200,120 L280,200 L200,280 L120,200 Z\" fill=\"%23d1d5db\" opacity=\"0.3\"/%3E%3C/svg%3E'"
+            >
             <div class="image-overlay">
               <div class="image-info">
                 <h4 class="font-semibold text-lg mb-1">${categoryName}</h4>
-                <p class="text-sm opacity-90">${mediaType === "video" ? "Video" : "Case"} Study #${index + 1}</p>
+                <p class="text-sm opacity-90">Case Study #${index + 1}</p>
               </div>
             </div>
           </div>
@@ -4105,7 +4009,7 @@
             galleryContainer.appendChild(imageItem);
 
             // Add click event for lightbox - PASS THE ACTUAL IMAGE OBJECT
-            imageItem.addEventListener("click", () => window.openLightbox(image));
+            imageItem.addEventListener("click", () => openLightbox(image));
           });
 
           // Update counter
@@ -4170,39 +4074,18 @@
         function setupLightbox() {
           const lightbox = document.getElementById("imageLightbox");
           const lightboxImage = document.getElementById("lightboxImage");
-          const lightboxVideo = document.getElementById("lightboxVideo");
-          const lightboxVideoSource = document.getElementById(
-            "lightboxVideoSource",
-          );
           const closeLightbox = document.getElementById("closeLightbox");
 
           function openLightbox(image) {
-            const mediaType = getMediaType(image);
-            const filename = image.filename || "Dental case - MR Dental Clinic";
-
-            if (mediaType === "video") {
-              lightboxImage.style.display = "none";
-              lightboxImage.removeAttribute("src");
-              lightboxVideo.style.display = "block";
-              lightboxVideoSource.src = image.path;
-              lightboxVideoSource.type = getVideoMimeType(image);
-              lightboxVideo.load();
-            } else {
-              lightboxVideo.pause();
-              lightboxVideo.style.display = "none";
-              lightboxVideoSource.removeAttribute("src");
-              lightboxVideo.load();
-              lightboxImage.style.display = "block";
-              lightboxImage.src = image.path;
-              lightboxImage.alt = filename;
-            }
-
+            // Now accepts image object directly
+            lightboxImage.src = image.path;
+            lightboxImage.alt =
+              image.filename || "Dental case - MR Dental Clinic";
             lightbox.classList.add("active");
             document.body.style.overflow = "hidden";
           }
 
           function closeLightboxFunc() {
-            lightboxVideo.pause();
             lightbox.classList.remove("active");
             document.body.style.overflow = "";
           }
