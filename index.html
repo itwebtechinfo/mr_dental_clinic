@@ -62,6 +62,11 @@
     <!-- ================= CANONICAL ================= -->
     <link rel="canonical" href="https://www.mrdentalclinic.com/" />
 
+    <!-- ================= PERFORMANCE: PRECONNECT / DNS-PREFETCH ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
     <!-- ================= FAVICON ================= -->
     <link
       rel="icon"
@@ -69,6 +74,18 @@
       sizes="32x32"
       href="./static/images/Logo-01.png"
     />
+
+    <!-- ================= PWA ================= -->
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./static/icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#d32f2f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="MR Dental Clinic" />
+
+    <!-- ================= PRIVACY ================= -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- ================= OPEN GRAPH (WHATSAPP LOGO PRIORITY) ================= -->
     <meta property="og:type" content="website" />
@@ -120,8 +137,8 @@
         "@type": "Dentist",
         "name": "MR Dental Clinic (Maximum Regenerative)",
         "description": "Awarded Best Dental Clinic in India. Advanced regenerative, cosmetic and implant dentistry led by Dr. Ekhlaq Ahmed in Delhi.",
-        "url": "https://wwww.mrdentalclinic.com",
-        "image": "https://www.mrdentalclinic.com/images/clinic-logo.png",
+        "url": "https://www.mrdentalclinic.com",
+        "image": "https://www.mrdentalclinic.com/static/images/Logo-01.png",
         "telephone": "+91 9540929832",
         "priceRange": "₹₹",
         "medicalSpecialty": [
@@ -177,105 +194,11 @@
       gtag("config", "G-R4QBWP6VE0");
     </script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (precompiled locally from tailwind.config.js, replaces the runtime CDN build) -->
+    <link rel="stylesheet" href="./static/css/tailwind.css" />
 
-    <!-- Custom Tailwind Configuration with Grey Colors -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "primary-red": "#d32f2f",
-              "primary-blue": "#1976d2",
-              "primary-dark": "#0d2538",
-              "primary-light": "#f0f8ff",
-              "accent-gold": "#ffd700",
-              "text-dark": "#1a1a1a",
-              "text-light": "#666666",
-              "grey-50": "#f9fafb",
-              "grey-100": "#f3f4f6",
-              "grey-200": "#e5e7eb",
-              "grey-300": "#d1d5db",
-              "grey-400": "#9ca3af",
-              "grey-500": "#6b7280",
-              "grey-600": "#4b5563",
-              "grey-700": "#374151",
-              "grey-800": "#1f2937",
-              "grey-900": "#111827",
-            },
-            backgroundImage: {
-              "gradient-red-blue":
-                "linear-gradient(135deg, #d32f2f 0%, #1976d2 100%)",
-              "gradient-blue-red":
-                "linear-gradient(135deg, #1976d2 0%, #d32f2f 100%)",
-              "gradient-grey-light":
-                "linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%)",
-              "gradient-grey-medium":
-                "linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%)",
-            },
-            fontFamily: {
-              inter: ["Inter", "sans-serif"],
-              montserrat: ["Montserrat", "sans-serif"],
-            },
-            boxShadow: {
-              custom: "0 4px 12px rgba(0, 0, 0, 0.08)",
-              "custom-lg": "0 10px 30px rgba(0, 0, 0, 0.12)",
-              "custom-xl": "0 20px 40px rgba(0, 0, 0, 0.15)",
-            },
-            animation: {
-              "fade-in": "fadeIn 0.8s ease-out forwards",
-              glow: "glow 2s ease-in-out infinite alternate",
-              "pulse-slow": "pulse 10s infinite alternate",
-              "rotate-slow": "rotate 20s linear infinite",
-              float: "float 6s ease-in-out infinite",
-              "slide-up": "slideUp 0.8s ease-out forwards",
-            },
-            keyframes: {
-              fadeIn: {
-                from: { opacity: 0, transform: "translateY(20px)" },
-                to: { opacity: 1, transform: "translateY(0)" },
-              },
-              glow: {
-                from: {
-                  textShadow:
-                    "0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(211, 47, 47, 0.3)",
-                },
-                to: {
-                  textShadow:
-                    "0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(211, 47, 47, 0.5), 0 0 40px rgba(25, 118, 210, 0.3)",
-                },
-              },
-              pulse: {
-                "0%": { transform: "scale(1)" },
-                "100%": { transform: "scale(1.1)" },
-              },
-              rotate: {
-                "0%": { transform: "rotate(0deg)" },
-                "100%": { transform: "rotate(360deg)" },
-              },
-              float: {
-                "0%, 100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-20px)" },
-              },
-              slideUp: {
-                from: { opacity: 0, transform: "translateY(40px)" },
-                to: { opacity: 1, transform: "translateY(0)" },
-              },
-            },
-            backdropBlur: {
-              xs: "2px",
-            },
-          },
-        },
-      };
-    </script>
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <!-- Font Awesome (self-hosted subset: only the icons actually used on this site) -->
+    <link rel="stylesheet" href="./static/css/fontawesome-subset.css" />
 
     <!-- Google Fonts -->
     <link
@@ -766,16 +689,16 @@
             >
           </div>
           <div class="flex space-x-4">
-            <a href="#" class="hover:text-accent-gold transition"
+            <a href="#" class="hover:text-accent-gold transition" aria-label="Facebook"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a href="#" class="hover:text-accent-gold transition"
+            <a href="#" class="hover:text-accent-gold transition" aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
-            <a href="#" class="hover:text-accent-gold transition"
+            <a href="#" class="hover:text-accent-gold transition" aria-label="YouTube"
               ><i class="fab fa-youtube"></i
             ></a>
-            <a href="#" class="hover:text-accent-gold transition"
+            <a href="#" class="hover:text-accent-gold transition" aria-label="Google"
               ><i class="fab fa-google"></i
             ></a>
           </div>
@@ -792,23 +715,25 @@
           <!-- Logo -->
           <a class="flex items-center" href="#home">
             <img
-              src="./static/images/Logo-01.png"
+              src="./static/images/Logo-01.webp"
               alt="MR Dental Clinic Logo - Best Dental Clinic in India | Dr. Ekhlaq Ahmed"
-              class="h-16 md:h-20 w-auto object-contain"
+              class="h-14 sm:h-16 md:h-20 w-auto object-contain"
+              width="868"
+              height="287"
             />
           </a>
 
           <!-- Mobile Phone -->
           <a
             href="tel:9540929832"
-            class="lg:hidden ml-auto mr-3 bg-white/10 p-2 rounded-lg border border-grey-700 hover:bg-white/20 transition"
+            class="lg:hidden ml-auto mr-3 flex-shrink-0 bg-white/10 p-2 rounded-lg border border-grey-700 hover:bg-white/20 transition"
           >
             <i class="fas fa-phone-alt text-white"></i>
           </a>
 
           <!-- Mobile Menu Button -->
           <button
-            class="lg:hidden border border-grey-700 p-2 text-white bg-black rounded-lg focus:outline-none focus:bg-grey-900 hover:bg-grey-800 transition"
+            class="lg:hidden flex-shrink-0 border border-grey-700 p-2 text-white bg-black rounded-lg focus:outline-none focus:bg-grey-900 hover:bg-grey-800 transition"
             id="mobileMenuButton"
             aria-label="Toggle navigation menu"
           >
@@ -868,6 +793,15 @@
 
               <li>
                 <a
+                  href="#products"
+                  class="nav-link px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-white/10 text-grey-300 hover:text-primary-red flex items-center gap-2 border border-transparent hover:border-grey-700"
+                >
+                  <i class="fas fa-bag-shopping text-sm text-grey-400"></i> Products
+                </a>
+              </li>
+
+              <li>
+                <a
                   href="#contact"
                   class="nav-link px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 hover:bg-white/10 text-grey-300 hover:text-primary-red flex items-center gap-2 border border-transparent hover:border-grey-700"
                 >
@@ -884,6 +818,23 @@
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <!-- Managed By -->
+        <div class="flex justify-end lg:justify-start lg:ml-[120px] mt-1">
+          <div class="flex items-center gap-1">
+            <span
+              class="text-white/90 text-xs sm:text-sm md:text-base font-medium whitespace-nowrap"
+              >Managed By :</span
+            >
+            <img
+              src="./static/images/abdhindlogo.webp"
+              alt="Abd Hind Medicare Group Pvt. Ltd."
+              class="h-4 sm:h-5 md:h-7 w-auto object-contain flex-shrink-0"
+              width="1246"
+              height="118"
+            />
           </div>
         </div>
 
@@ -940,6 +891,15 @@
 
             <li>
               <a
+                href="#products"
+                class="block bg-black border border-grey-700 rounded-lg px-4 py-3 font-semibold transition-all duration-300 hover:bg-grey-900 hover:border-primary-red/40 text-grey-300 hover:text-primary-red flex items-center gap-3"
+              >
+                <i class="fas fa-bag-shopping text-grey-400"></i> Products
+              </a>
+            </li>
+
+            <li>
+              <a
                 href="#contact"
                 class="block bg-black border border-grey-700 rounded-lg px-4 py-3 font-semibold transition-all duration-300 hover:bg-grey-900 hover:border-primary-red/40 text-grey-300 hover:text-primary-red flex items-center gap-3"
               >
@@ -981,9 +941,11 @@
 
         <!-- Image -->
         <img
-          src="./static/images/guarantee-100.jpg"
+          src="./static/images/guarantee-100.webp"
           alt="100% Guarantee"
           class="w-12 h-12 object-contain"
+          width="1024"
+          height="819"
         />
 
         <!-- Text -->
@@ -1096,7 +1058,7 @@
         <div
           class="slider-slide absolute top-0 left-0 w-full h-full flex items-center justify-center bg-center bg-no-repeat"
           style="
-            background-image: url(&quot;./static/images/dr-img-abdHind.jpeg&quot;);
+            background-image: url(&quot;./static/images/dr-img-abdHind.webp&quot;);
             background-size: contain;
           "
         ></div>
@@ -1104,7 +1066,7 @@
         <div
           class="slider-slide absolute top-0 left-0 w-full h-full flex items-center justify-center bg-center bg-no-repeat"
           style="
-            background-image: url(&quot;./images/dr-ekhlaq-ahmed.jpeg&quot;);
+            background-image: url(&quot;./images/dr-ekhlaq-ahmed.webp&quot;);
             background-size: contain;
           "
         ></div>
@@ -1112,7 +1074,7 @@
         <div
           class="slider-slide absolute top-0 left-0 w-full h-full flex items-center justify-center bg-center bg-no-repeat"
           style="
-            background-image: url(&quot;./images/free-dental-tips.jpeg&quot;);
+            background-image: url(&quot;./images/free-dental-tips.webp&quot;);
             background-size: contain;
           "
         ></div>
@@ -1120,14 +1082,14 @@
         <div
           class="slider-slide absolute top-0 left-0 w-full h-full flex items-center justify-center bg-center bg-no-repeat"
           style="
-            background-image: url(&quot;./images/products/bamboo-toothbrush.jpeg&quot;);
+            background-image: url(&quot;./images/products/bamboo-toothbrush.webp&quot;);
             background-size: contain;
           "
         ></div>
         <div
           class="slider-slide absolute top-0 left-0 w-full h-full flex items-center justify-center bg-center bg-no-repeat"
           style="
-            background-image: url(&quot;./images/products/limited-offer.jpeg&quot;);
+            background-image: url(&quot;./images/products/limited-offer.webp&quot;);
             background-size: contain;
           "
         ></div>
@@ -1164,6 +1126,10 @@
           <div
             class="autoplay-toggle active w-10 h-5 bg-grey-700 rounded-full relative cursor-pointer border border-grey-600"
             id="autoplayToggle"
+            role="switch"
+            aria-checked="true"
+            aria-label="Toggle slideshow autoplay"
+            tabindex="0"
           ></div>
         </div>
       </div>
@@ -1188,6 +1154,9 @@
                 src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
                 alt="Google"
                 class="w-14 h-14"
+                width="56"
+                height="56"
+                loading="lazy"
               />
 
               <div class="text-left">
@@ -1358,9 +1327,12 @@
                   class="bg-gradient-to-br from-blue-50 to-indigo-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-blue-100"
                 >
                   <img
-                    src="./static/images/ada-cerp-logo.jpg"
+                    src="./static/images/ada-cerp-logo.webp"
                     alt="ADA CERP Logo"
-                    class="h-10 sm:h-12 object-contain"
+                    class="h-10 sm:h-12 w-auto object-contain"
+                    width="900"
+                    height="242"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1417,9 +1389,12 @@
                   class="bg-gradient-to-br from-emerald-50 to-teal-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-emerald-100"
                 >
                   <img
-                    src="./static/images/ada-cerp-logo.jpg"
+                    src="./static/images/ada-cerp-logo.webp"
                     alt="ADA CERP Logo"
-                    class="h-10 sm:h-12 object-contain"
+                    class="h-10 sm:h-12 w-auto object-contain"
+                    width="900"
+                    height="242"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1476,9 +1451,12 @@
                   class="bg-gradient-to-br from-purple-50 to-pink-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-purple-100"
                 >
                   <img
-                    src="./static/images/ada-cerp-logo.jpg"
+                    src="./static/images/ada-cerp-logo.webp"
                     alt="ADA CERP Logo"
-                    class="h-10 sm:h-12 object-contain"
+                    class="h-10 sm:h-12 w-auto object-contain"
+                    width="900"
+                    height="242"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1535,9 +1513,12 @@
                   class="bg-gradient-to-br from-amber-50 to-orange-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-amber-100"
                 >
                   <img
-                    src="./static/images/ada-cerp-logo.jpg"
+                    src="./static/images/ada-cerp-logo.webp"
                     alt="ADA CERP Logo"
-                    class="h-10 sm:h-12 object-contain"
+                    class="h-10 sm:h-12 w-auto object-contain"
+                    width="900"
+                    height="242"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1596,7 +1577,10 @@
                   <img
                     src="./static/images/cipla-logo.svg"
                     alt="Cipla Logo"
-                    class="h-7 sm:h-9 md:h-10 object-contain flex-shrink-0"
+                    class="h-7 sm:h-9 md:h-10 w-auto object-contain flex-shrink-0"
+                    width="1024"
+                    height="355"
+                    loading="lazy"
                   />
                   <div
                     class="w-px h-6 sm:h-7 md:h-8 bg-gray-300 flex-shrink-0"
@@ -1604,7 +1588,10 @@
                   <img
                     src="./static/images/times-of-india-logo.webp"
                     alt="The Times of India Logo"
-                    class="h-6 sm:h-7 md:h-8 object-contain flex-shrink-0"
+                    class="h-6 sm:h-7 md:h-8 w-auto object-contain flex-shrink-0"
+                    width="1152"
+                    height="414"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -1676,15 +1663,122 @@
           ></div>
         </h2>
         <div
-          class="about-card bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 scroll-scale-in"
+          class="about-card bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 scroll-scale-in mb-10"
         >
           <p class="text-xl leading-relaxed text-white">
             M R Dental (Maximum Regenerative) Clinic is a premier dental care
             center in Delhi, known for advanced regenerative dentistry, ethical
             practices, and patient-focused treatments. The clinic combines
             modern dental technology with years of clinical expertise to deliver
-            predictable, long-lasting, and aesthetic results.
+            predictable, long-lasting, and aesthetic results. It operates as a
+            dedicated dental care branch of
+            <span class="text-emerald-400 font-semibold"
+              >Abd Hind MediCare Group Pvt. Ltd.</span
+            >, a multidisciplinary healthcare organization committed to
+            building an integrated, patient-first medical ecosystem.
           </p>
+        </div>
+
+        <!-- Leadership -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Dr. Ekhlaq Ahmed -->
+          <div
+            class="about-card group relative overflow-hidden bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 scroll-scale-in hover:bg-white/15 hover:-translate-y-2 hover:shadow-custom-xl transition-all duration-300"
+          >
+            <div
+              class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-sky-400/20 blur-3xl group-hover:bg-sky-400/30 transition-colors duration-300"
+            ></div>
+
+            <div class="relative flex items-center gap-4 mb-5">
+              <div
+                class="w-16 h-16 shrink-0 rounded-full bg-gradient-red-blue flex items-center justify-center shadow-lg border-2 border-white/40 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-user-doctor text-2xl text-white"></i>
+              </div>
+              <div>
+                <h3
+                  class="text-xl md:text-2xl font-montserrat font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200"
+                >
+                  Dr. Ekhlaq Ahmed
+                </h3>
+                <p class="text-white/90 font-medium text-sm md:text-base">
+                  Founder &amp; Director | Lead Dental Surgeon
+                </p>
+              </div>
+            </div>
+
+            <span
+              class="relative inline-flex items-center gap-2 px-3 py-1.5 mb-5 rounded-full bg-accent-gold/15 border border-accent-gold/40 text-accent-gold text-xs md:text-sm font-semibold"
+            >
+              <i class="fas fa-graduation-cap"></i> BDS – Jamia Millia Islamia
+              (Central University)
+            </span>
+
+            <p class="relative text-white/85 leading-relaxed text-sm md:text-base">
+              With over
+              <strong class="text-yellow-300">10+ years</strong> of clinical
+              experience, Dr. Ekhlaq Ahmed has dedicated his career to
+              delivering modern, minimally invasive, and regenerative dental
+              care. Through MR Dental Clinic, he has successfully transformed
+              thousands of smiles while earning the trust of patients through
+              ethical practice, transparency, and clinical excellence. His
+              vision extends beyond dentistry — as the Founder of Abd Hind
+              MediCare Group Pvt. Ltd., he is leading the development of an
+              integrated healthcare ecosystem that combines compassionate
+              care, advanced technology, innovation, and multidisciplinary
+              healthcare services under one trusted organization.
+            </p>
+          </div>
+
+          <!-- Dr. Rashiqa -->
+          <div
+            class="about-card group relative overflow-hidden bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 scroll-scale-in hover:bg-white/15 hover:-translate-y-2 hover:shadow-custom-xl transition-all duration-300"
+          >
+            <div
+              class="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-emerald-400/20 blur-3xl group-hover:bg-emerald-400/30 transition-colors duration-300"
+            ></div>
+
+            <div class="relative flex items-center gap-4 mb-5">
+              <div
+                class="w-16 h-16 shrink-0 rounded-full bg-gradient-blue-red flex items-center justify-center shadow-lg border-2 border-white/40 group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fas fa-user-nurse text-2xl text-white"></i>
+              </div>
+              <div>
+                <h3
+                  class="text-xl md:text-2xl font-montserrat font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200"
+                >
+                  Dr. Rashiqa
+                </h3>
+                <p class="text-white/90 font-medium text-sm md:text-base">
+                  Chief Executive Officer (CEO)
+                </p>
+              </div>
+            </div>
+
+            <span
+              class="relative inline-flex items-center gap-2 px-3 py-1.5 mb-5 rounded-full bg-accent-gold/15 border border-accent-gold/40 text-accent-gold text-xs md:text-sm font-semibold"
+            >
+              <i class="fas fa-graduation-cap"></i> BDS (Dental Surgeon)
+            </span>
+
+            <p class="relative text-white/85 leading-relaxed text-sm md:text-base">
+              With over
+              <strong class="text-yellow-300">5+ years</strong> of clinical
+              experience, Dr. Rashiqa serves as the Chief Executive Officer
+              (CEO) of Abd Hind MediCare Group Pvt. Ltd. — the parent
+              organization of MR Dental Clinic — leading the organization's
+              strategic growth, clinical operations, and patient care
+              excellence. She oversees healthcare administration, quality
+              assurance, operational efficiency, and the implementation of
+              patient-centric healthcare standards across the organization.
+              Committed to innovation, ethical healthcare, and continuous
+              improvement, Dr. Rashiqa plays a vital role in strengthening the
+              group's vision of building an integrated healthcare ecosystem
+              that delivers high-quality, accessible, and compassionate
+              medical services for every patient.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -1841,7 +1935,7 @@
     <!-- Lightbox Modal -->
     <div id="imageLightbox" class="lightbox">
       <div class="lightbox-content">
-        <button id="closeLightbox" class="lightbox-close">
+        <button id="closeLightbox" class="lightbox-close" aria-label="Close image preview">
           <i class="fas fa-times"></i>
         </button>
         <img
@@ -2589,9 +2683,11 @@
             ></div>
 
             <img
-              src="./images/dr-ekhlaq-ahmed.jpeg"
+              src="./images/dr-ekhlaq-ahmed.webp"
               alt="Dr. Ekhlaq Ahmed - Founder & Lead Dental Specialist | Regenerative Dentistry Expert"
               class="relative z-10 w-full h-full object-cover rounded-full border-[5px] border-white/30 shadow-xl hover:scale-105 transition-transform duration-500"
+              width="959"
+              height="1280"
               loading="lazy"
             />
 
@@ -2616,7 +2712,7 @@
               Dr. Ekhlaq Ahmed
             </h3>
             <p class="text-white/90 font-medium mb-1 text-lg">
-              Founder & Director | Lead Dental Surgeon
+              Founder | Lead Dental Surgeon
             </p>
             <!-- CLINIC NAME -->
             <p class="leading-relaxed text-lg mb-2 font-semibold">
@@ -2625,24 +2721,6 @@
               <span class="text-sky-400 font-semibold">Dental Clinic</span>
             </p>
 
-            <!-- COMPANY -->
-            <p class="text-slate-300 font-medium">
-              <span class="text-blue-400 font-bold">Abd Hind</span>
-              <span class="text-emerald-400 font-bold">Medi</span
-              ><span class="text-red-400 font-bold">Care</span>
-              <span class="text-slate-400">Group Pvt. Ltd</span>
-            </p>
-
-            <!-- <p class="leading-relaxed text-lg mb-2">
-              <span class="text-red-400 font-semibold">
-                Maximum
-              </span>
-              <span class="text-green-400 font-semibold">
-                Regenerative
-              </span>
-              <span class="text-blue-400 font-semibold"> Dental Clinic </span>
-            </p>
-            <p><span class="text-red-400 font-bold">Abd</span> <span class="text-green-400 font-bold">Hind</span> <span class="text-blue-400 font-bold">Medi</span><span class="text-red-400 font-bold">Care</span> <span class="text-green-400 font-bold">Group </span>Pvt. Ltd</p> -->
             <p class="text-sm text-white/70">
               <span class="inline-flex items-center gap-1">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -2653,6 +2731,30 @@
                   />
                 </svg>
                 Established: March 2017
+              </span>
+            </p>
+
+            <p class="text-white/90 font-medium mb-1 text-lg mt-4">
+              Managing Director
+            </p>
+            <!-- COMPANY -->
+            <p class="text-slate-300 font-medium">
+              <span class="text-blue-400 font-bold">Abd Hind</span>
+              <span class="text-emerald-400 font-bold">Medi</span
+              ><span class="text-red-400 font-bold">Care</span>
+              <span class="text-slate-400">Group Pvt. Ltd</span>
+            </p>
+
+            <p class="text-sm text-white/70">
+              <span class="inline-flex items-center gap-1">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                Established: March 2026
               </span>
             </p>
 
@@ -2738,6 +2840,8 @@
                           src="./static/images/usa-logo.png"
                           alt="United States of America"
                           class="w-8 h-8 object-contain"
+                          width="525"
+                          height="350"
                           loading="lazy"
                         />
                         <span>New York, USA</span>
@@ -2752,6 +2856,8 @@
                       src="./static/images/global.webp"
                       alt="International Centre of Dental Excellence (ICDE) Logo"
                       class="w-8 h-8 object-contain"
+                      width="512"
+                      height="512"
                       loading="lazy"
                     />
                     <span>
@@ -2892,6 +2998,48 @@
       </div>
     </section>
 
+    <!-- Products -->
+    <section
+      class="products-section section-scroll py-16 bg-white relative overflow-hidden"
+      id="products"
+    >
+      <div
+        class="absolute -top-24 -left-24 w-72 h-72 bg-primary-red/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute -bottom-24 -right-24 w-72 h-72 bg-primary-blue/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12">
+          <span
+            class="inline-block bg-gradient-red-blue text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-3"
+          >
+            <i class="fas fa-bag-shopping mr-1"></i> Doctor Recommended
+          </span>
+          <h2
+            class="section-title text-3xl md:text-4xl font-montserrat font-extrabold text-grey-900 mb-4 relative scroll-fade-in"
+          >
+            Dental Care Products
+          </h2>
+          <p
+            class="text-grey-600 max-w-2xl mx-auto text-lg mb-6 scroll-fade-in"
+          >
+            Curated oral-care essentials, handpicked by our dental team for a
+            healthier everyday routine.
+          </p>
+          <div class="w-24 h-1 bg-gradient-red-blue rounded mx-auto"></div>
+        </div>
+
+        <div
+          id="productsGrid"
+          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Product cards are auto-rendered by JS from images/products -->
+        </div>
+      </div>
+    </section>
+
     <!-- Contact & Location -->
     <section
       class="contact-section section-scroll py-16 bg-gradient-red-blue text-white"
@@ -3001,9 +3149,12 @@
           <div>
             <a class="flex items-center mb-4" href="#home">
               <img
-                src="./static/images/Logo-01.png"
+                src="./static/images/Logo-01.webp"
                 alt="MR Dental Clinic Logo"
                 class="h-16 w-auto object-contain"
+                width="868"
+                height="287"
+                loading="lazy"
               />
             </a>
             <p class="text-grey-300 mb-6">
@@ -3014,24 +3165,28 @@
               <a
                 href="#"
                 class="text-grey-400 hover:text-accent-gold transition"
+                aria-label="Facebook"
               >
                 <i class="fab fa-facebook-f text-lg"></i>
               </a>
               <a
                 href="#"
                 class="text-grey-400 hover:text-accent-gold transition"
+                aria-label="Instagram"
               >
                 <i class="fab fa-instagram text-lg"></i>
               </a>
               <a
                 href="#"
                 class="text-grey-400 hover:text-accent-gold transition"
+                aria-label="YouTube"
               >
                 <i class="fab fa-youtube text-lg"></i>
               </a>
               <a
                 href="#"
                 class="text-grey-400 hover:text-accent-gold transition"
+                aria-label="Google"
               >
                 <i class="fab fa-google text-lg"></i>
               </a>
@@ -3185,17 +3340,18 @@
           <p class="text-xs">Dr. Ekhlaq Ahmed | Regenerate Your Smile</p>
         </div> -->
         <div
-          class="pt-6 border-t border-slate-700 text-slate-400 text-sm flex items-center justify-center"
+          class="pt-6 border-t border-slate-700 text-slate-400 text-sm flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-2"
         >
           <!-- LEFT: LOGO -->
           <img
-            src="./static/images/logo.png"
+            src="./static/images/logo.webp"
             alt="Abd Hind Medicare Group"
-            class="h-16 object-contain opacity-90 hover:opacity-100 transition mr-2"
+            class="h-16 object-contain opacity-90 hover:opacity-100 transition sm:mr-2 flex-shrink-0"
+            loading="lazy"
           />
 
           <!-- RIGHT: TEXT -->
-          <div class="leading-tight">
+          <div class="leading-tight min-w-0">
             <p class="mb-1">
               &copy; 2025 Maximum Regenerative Dental Clinic. All Rights
               Reserved.
@@ -3219,7 +3375,7 @@
               href="https://itwebtech.in"
               target="_blank"
               rel="noopener"
-              class="text-accent-gold font-semibold hover:text-primary-red hover:underline transition"
+              class="text-accent-gold font-semibold hover:text-primary-red hover:underline transition block sm:inline mt-1 sm:mt-0"
             >
               IT WEB TECH SOLUTION
             </a>
@@ -3232,6 +3388,7 @@
     <a
       href="https://wa.me/919540929832?text=Hi%20Doctor,%0AI%20would%20like%20to%20book%20a%20dental%20consultation.%0APlease%20guide%20me."
       class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform z-50 border border-green-400"
+      aria-label="Chat on WhatsApp"
       ><i class="fab fa-whatsapp"></i
     ></a>
 
@@ -3239,6 +3396,7 @@
       href="tel:9540929832"
       class="fixed bottom-24 right-6 w-14 h-14 text-white rounded-full flex items-center justify-center text-xl shadow-2xl hover:scale-110 transition-transform z-50 border border-white/20"
       style="background: linear-gradient(135deg, #d32f2f, #1976d2)"
+      aria-label="Call the clinic"
     >
       <i class="fa-solid fa-phone"></i>
     </a>
@@ -3247,6 +3405,7 @@
       href="#contact"
       class="fixed bottom-40 right-6 w-14 h-14 text-white rounded-full flex items-center justify-center text-xl shadow-2xl hover:scale-110 transition-transform z-50 border border-orange-300"
       style="background: #ff9800"
+      aria-label="Book an appointment"
     >
       <i class="fa-solid fa-calendar-check"></i>
     </a>
@@ -3282,16 +3441,30 @@
             dot.style.background = "#ffd700";
             dot.style.transform = "scale(1.3)";
           }
+          dot.setAttribute("role", "button");
+          dot.setAttribute("tabindex", "0");
+          dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
           dot.addEventListener("click", () => goToSlide(index));
+          dot.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              goToSlide(index);
+            }
+          });
           dotsContainer.appendChild(dot);
           dots.push(dot);
         });
 
         startAutoplay();
 
-        document
-          .getElementById("autoplayToggle")
-          .addEventListener("click", toggleAutoplay);
+        const autoplayToggleEl = document.getElementById("autoplayToggle");
+        autoplayToggleEl.addEventListener("click", toggleAutoplay);
+        autoplayToggleEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleAutoplay();
+          }
+        });
       }
 
       function changeSlide(direction) {
@@ -3333,9 +3506,11 @@
 
         if (isAutoplay) {
           toggle.classList.add("active");
+          toggle.setAttribute("aria-checked", "true");
           startAutoplay();
         } else {
           toggle.classList.remove("active");
+          toggle.setAttribute("aria-checked", "false");
           clearInterval(autoplayInterval);
         }
       }
@@ -3352,345 +3527,345 @@
       const imageList = [
         {
           filename: "img_25.jpg",
-          path: "./images/smileMakeOver/img_25.jpg",
+          path: "./images/smileMakeOver/img_25.webp",
           category: "all",
         },
         {
           filename: "img_01.jpeg",
-          path: "./images/smileMakeOver/img_01.jpeg",
+          path: "./images/smileMakeOver/img_01.webp",
           category: "all",
         },
         {
           filename: "img_07.jpeg",
-          path: "./images/smileMakeOver/img_07.jpeg",
+          path: "./images/smileMakeOver/img_07.webp",
           category: "all",
         },
         {
           filename: "img_15.jpeg",
-          path: "./images/smileMakeOver/img_15.jpeg",
+          path: "./images/smileMakeOver/img_15.webp",
           category: "all",
         },
         {
           filename: "img_24.jpg",
-          path: "./images/smileMakeOver/img_24.jpg",
+          path: "./images/smileMakeOver/img_24.webp",
           category: "all",
         },
         {
           filename: "img_17.jpeg",
-          path: "./images/smileMakeOver/img_17.jpeg",
+          path: "./images/smileMakeOver/img_17.webp",
           category: "all",
         },
         {
           filename: "img_01.png",
-          path: "./images/endodonticTreatment/img_01.png",
+          path: "./images/endodonticTreatment/img_01.webp",
           category: "all",
         },
         {
           filename: "img_12.jpeg",
-          path: "./images/pediatricDentistry/img_12.jpeg",
+          path: "./images/pediatricDentistry/img_12.webp",
           category: "all",
         },
 
         {
           filename: "img_02.png",
-          path: "./images/impactionAndSurgery/img_02.png",
+          path: "./images/impactionAndSurgery/img_02.webp",
           category: "all",
         },
 
         {
           filename: "img_01.png",
-          path: "./images/impactionAndSurgery/img_01.png",
+          path: "./images/impactionAndSurgery/img_01.webp",
           category: "all",
         },
         {
           filename: "img_01.jpeg",
-          path: "./images/happyPatients/img_01.jpeg",
+          path: "./images/happyPatients/img_01.webp",
           category: "all",
         },
         {
           filename: "img_03.jpeg",
-          path: "./images/happyPatients/img_03.jpeg",
+          path: "./images/happyPatients/img_03.webp",
           category: "all",
         },
 
         {
           filename: "img_04.jpeg",
-          path: "./images/happyPatients/img_04.jpeg",
+          path: "./images/happyPatients/img_04.webp",
           category: "all",
         },
 
         {
           filename: "img_25.jpg",
-          path: "./images/smileMakeOver/img_25.jpg",
+          path: "./images/smileMakeOver/img_25.webp",
           category: "smile",
         },
         {
           filename: "img_22.jpeg",
-          path: "./images/smileMakeOver/img_22.jpg",
+          path: "./images/smileMakeOver/img_22.webp",
           category: "smile",
         },
         {
           filename: "img_01.jpeg",
-          path: "./images/smileMakeOver/img_01.jpeg",
+          path: "./images/smileMakeOver/img_01.webp",
           category: "smile",
         },
         {
           filename: "img_02.jpeg",
-          path: "./images/smileMakeOver/img_02.jpeg",
+          path: "./images/smileMakeOver/img_02.webp",
           category: "smile",
         },
         {
           filename: "img_03.jpeg",
-          path: "./images/smileMakeOver/img_03.jpeg",
+          path: "./images/smileMakeOver/img_03.webp",
           category: "smile",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/smileMakeOver/img_04.jpeg",
+          path: "./images/smileMakeOver/img_04.webp",
           category: "smile",
         },
         {
           filename: "img_05.jpeg",
-          path: "./images/smileMakeOver/img_05.jpeg",
+          path: "./images/smileMakeOver/img_05.webp",
           category: "smile",
         },
         {
           filename: "img_06.jpeg",
-          path: "./images/smileMakeOver/img_06.jpeg",
+          path: "./images/smileMakeOver/img_06.webp",
           category: "smile",
         },
         {
           filename: "img_07.jpeg",
-          path: "./images/smileMakeOver/img_07.jpeg",
+          path: "./images/smileMakeOver/img_07.webp",
           category: "smile",
         },
         {
           filename: "img_08.jpeg",
-          path: "./images/smileMakeOver/img_08.jpeg",
+          path: "./images/smileMakeOver/img_08.webp",
           category: "smile",
         },
         {
           filename: "img_09.jpeg",
-          path: "./images/smileMakeOver/img_09.jpeg",
+          path: "./images/smileMakeOver/img_09.webp",
           category: "smile",
         },
         {
           filename: "img_10.jpeg",
-          path: "./images/smileMakeOver/img_10.jpeg",
+          path: "./images/smileMakeOver/img_10.webp",
           category: "smile",
         },
         {
           filename: "img_11.jpeg",
-          path: "./images/smileMakeOver/img_11.jpeg",
+          path: "./images/smileMakeOver/img_11.webp",
           category: "smile",
         },
         {
           filename: "img_12.jpeg",
-          path: "./images/smileMakeOver/img_12.jpeg",
+          path: "./images/smileMakeOver/img_12.webp",
           category: "smile",
         },
         {
           filename: "img_13.jpeg",
-          path: "./images/smileMakeOver/img_13.jpeg",
+          path: "./images/smileMakeOver/img_13.webp",
           category: "smile",
         },
         {
           filename: "img_14.jpeg",
-          path: "./images/smileMakeOver/img_14.jpeg",
+          path: "./images/smileMakeOver/img_14.webp",
           category: "smile",
         },
         {
           filename: "img_15.jpeg",
-          path: "./images/smileMakeOver/img_15.jpeg",
+          path: "./images/smileMakeOver/img_15.webp",
           category: "smile",
         },
         {
           filename: "img_16.jpeg",
-          path: "./images/smileMakeOver/img_16.jpeg",
+          path: "./images/smileMakeOver/img_16.webp",
           category: "smile",
         },
 
         {
           filename: "img_17.jpeg",
-          path: "./images/smileMakeOver/img_17.jpeg",
+          path: "./images/smileMakeOver/img_17.webp",
           category: "smile",
         },
         {
           filename: "img_18.jpeg",
-          path: "./images/smileMakeOver/img_18.jpeg",
+          path: "./images/smileMakeOver/img_18.webp",
           category: "smile",
         },
         {
           filename: "img_19.jpeg",
-          path: "./images/smileMakeOver/img_19.jpeg",
+          path: "./images/smileMakeOver/img_19.webp",
           category: "smile",
         },
         {
           filename: "img_20.jpeg",
-          path: "./images/smileMakeOver/img_20.jpeg",
+          path: "./images/smileMakeOver/img_20.webp",
           category: "smile",
         },
         {
           filename: "img_21.jpeg",
-          path: "./images/smileMakeOver/img_21.jpeg",
+          path: "./images/smileMakeOver/img_21.webp",
           category: "smile",
         },
 
         {
           filename: "img_23.jpg",
-          path: "./images/smileMakeOver/img_23.jpg",
+          path: "./images/smileMakeOver/img_23.webp",
           category: "smile",
         },
         {
           filename: "img_24.jpg",
-          path: "./images/smileMakeOver/img_24.jpg",
+          path: "./images/smileMakeOver/img_24.webp",
           category: "smile",
         },
         {
           filename: "img_26.jpeg",
-          path: "./images/smileMakeOver/img_26.jpeg",
+          path: "./images/smileMakeOver/img_26.webp",
           category: "happyPatients",
         },
         {
           filename: "img_26.jpeg",
-          path: "./images/smileMakeOver/img_26.jpeg",
+          path: "./images/smileMakeOver/img_26.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_27.jpeg",
-          path: "./images/smileMakeOver/img_27.jpeg",
+          path: "./images/smileMakeOver/img_27.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_27.jpeg",
-          path: "./images/smileMakeOver/img_27.jpeg",
+          path: "./images/smileMakeOver/img_27.webp",
           category: "happyPatients",
         },
         {
           filename: "img_28.jpeg",
-          path: "./images/smileMakeOver/img_28.jpeg",
+          path: "./images/smileMakeOver/img_28.webp",
           category: "happyPatients",
         },
         {
           filename: "img_28.jpeg",
-          path: "./images/smileMakeOver/img_28.jpeg",
+          path: "./images/smileMakeOver/img_28.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_29.jpeg",
-          path: "./images/smileMakeOver/img_29.jpeg",
+          path: "./images/smileMakeOver/img_29.webp",
           category: "smile",
         },
 
         {
           filename: "img_01.png",
-          path: "./images/endodonticTreatment/img_01.png",
+          path: "./images/endodonticTreatment/img_01.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_02.jpeg",
-          path: "./images/endodonticTreatment/img_02.jpeg",
+          path: "./images/endodonticTreatment/img_02.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_03.jpeg",
-          path: "./images/endodonticTreatment/img_03.jpeg",
+          path: "./images/endodonticTreatment/img_03.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/endodonticTreatment/img_04.jpeg",
+          path: "./images/endodonticTreatment/img_04.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_05.jpeg",
-          path: "./images/endodonticTreatment/img_05.jpeg",
+          path: "./images/endodonticTreatment/img_05.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_06.jpeg",
-          path: "./images/endodonticTreatment/img_06.jpeg",
+          path: "./images/endodonticTreatment/img_06.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_07.jpeg",
-          path: "./images/endodonticTreatment/img_07.jpeg",
+          path: "./images/endodonticTreatment/img_07.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_08.jpeg",
-          path: "./images/endodonticTreatment/img_08.jpeg",
+          path: "./images/endodonticTreatment/img_08.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_09.jpeg",
-          path: "./images/endodonticTreatment/img_09.jpeg",
+          path: "./images/endodonticTreatment/img_09.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_10.jpeg",
-          path: "./images/endodonticTreatment/img_10.jpeg",
+          path: "./images/endodonticTreatment/img_10.webp",
           category: "endodonticTreatment",
         },
         {
           filename: "img_11.jpeg",
-          path: "./images/endodonticTreatment/img_11.jpeg",
+          path: "./images/endodonticTreatment/img_11.webp",
           category: "endodonticTreatment",
         },
 
         {
           filename: "img_01.jpeg",
-          path: "./images/happyPatients/img_01.jpeg",
+          path: "./images/happyPatients/img_01.webp",
           category: "happyPatients",
         },
         {
           filename: "img_02.jpeg",
-          path: "./images/happyPatients/img_02.jpeg",
+          path: "./images/happyPatients/img_02.webp",
           category: "happyPatients",
         },
         {
           filename: "img_03.jpeg",
-          path: "./images/happyPatients/img_03.jpeg",
+          path: "./images/happyPatients/img_03.webp",
           category: "happyPatients",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/happyPatients/img_04.jpeg",
+          path: "./images/happyPatients/img_04.webp",
           category: "happyPatients",
         },
         {
           filename: "img_05.jpeg",
-          path: "./images/happyPatients/img_05.jpeg",
+          path: "./images/happyPatients/img_05.webp",
           category: "happyPatients",
         },
         {
           filename: "img_06.jpeg",
-          path: "./images/happyPatients/img_06.jpeg",
+          path: "./images/happyPatients/img_06.webp",
           category: "happyPatients",
         },
         {
           filename: "img_07.jpeg",
-          path: "./images/happyPatients/img_07.jpeg",
+          path: "./images/happyPatients/img_07.webp",
           category: "happyPatients",
         },
         {
           filename: "img_08.jpeg",
-          path: "./images/happyPatients/img_08.jpeg",
+          path: "./images/happyPatients/img_08.webp",
           category: "happyPatients",
         },
         {
           filename: "img_09.jpeg",
-          path: "./images/happyPatients/img_09.jpeg",
+          path: "./images/happyPatients/img_09.webp",
           category: "happyPatients",
         },
         {
           filename: "img_10.jpeg",
-          path: "./images/happyPatients/img_10.jpeg",
+          path: "./images/happyPatients/img_10.webp",
           category: "happyPatients",
         },
         // {
         //   filename: "img_11.jpeg",
-        //   path: "./images/happyPatients/img_11.jpeg",
+        //   path: "./images/happyPatients/img_11.webp",
         //   category: "happyPatients",
         // },
         // {
@@ -3700,239 +3875,239 @@
         // },
         {
           filename: "img_13.jpeg",
-          path: "./images/happyPatients/img_13.jpeg",
+          path: "./images/happyPatients/img_13.webp",
           category: "happyPatients",
         },
         {
           filename: "img_14.jpeg",
-          path: "./images/happyPatients/img_14.jpeg",
+          path: "./images/happyPatients/img_14.webp",
           category: "happyPatients",
         },
         {
           filename: "img_15.jpeg",
-          path: "./images/happyPatients/img_15.jpeg",
+          path: "./images/happyPatients/img_15.webp",
           category: "happyPatients",
         },
         {
           filename: "img_16.jpeg",
-          path: "./images/happyPatients/img_16.jpeg",
+          path: "./images/happyPatients/img_16.webp",
           category: "happyPatients",
         },
         {
           filename: "img_17.jpeg",
-          path: "./images/happyPatients/img_17.jpeg",
+          path: "./images/happyPatients/img_17.webp",
           category: "happyPatients",
         },
         {
           filename: "img_17.jpeg",
-          path: "./images/happyPatients/img_17.jpeg",
+          path: "./images/happyPatients/img_17.webp",
           category: "smile",
         },
 
         {
           filename: "img_01.png",
-          path: "./images/impactionAndSurgery/img_01.png",
+          path: "./images/impactionAndSurgery/img_01.webp",
           category: "impactionAndSurgery",
         },
         {
           filename: "img_02.png",
-          path: "./images/impactionAndSurgery/img_02.png",
+          path: "./images/impactionAndSurgery/img_02.webp",
           category: "impactionAndSurgery",
         },
 
         {
           filename: "img_03.jpeg",
-          path: "./images/impactionAndSurgery/img_03.jpeg",
+          path: "./images/impactionAndSurgery/img_03.webp",
           category: "impactionAndSurgery",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/impactionAndSurgery/img_04.jpeg",
+          path: "./images/impactionAndSurgery/img_04.webp",
           category: "impactionAndSurgery",
         },
         {
           filename: "img_05.jpeg",
-          path: "./images/impactionAndSurgery/img_05.jpeg",
+          path: "./images/impactionAndSurgery/img_05.webp",
           category: "impactionAndSurgery",
         },
         {
           filename: "img_06.jpeg",
-          path: "./images/impactionAndSurgery/img_06.jpeg",
+          path: "./images/impactionAndSurgery/img_06.webp",
           category: "impactionAndSurgery",
         },
         {
           filename: "img_07.png",
-          path: "./images/impactionAndSurgery/img_07.png",
+          path: "./images/impactionAndSurgery/img_07.webp",
           category: "impactionAndSurgery",
         },
 
         {
           filename: "img_01.png",
-          path: "./images/ourChallengingWork/img_01.png",
+          path: "./images/ourChallengingWork/img_01.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_02.png",
-          path: "./images/ourChallengingWork/img_02.png",
+          path: "./images/ourChallengingWork/img_02.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_03.png",
-          path: "./images/ourChallengingWork/img_03.png",
+          path: "./images/ourChallengingWork/img_03.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/ourChallengingWork/img_04.jpeg",
+          path: "./images/ourChallengingWork/img_04.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_05.png",
-          path: "./images/ourChallengingWork/img_05.png",
+          path: "./images/ourChallengingWork/img_05.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_06.png",
-          path: "./images/ourChallengingWork/img_06.png",
+          path: "./images/ourChallengingWork/img_06.webp",
           category: "ourChallengingWork",
         },
 
         {
           filename: "img_07.png",
-          path: "./images/ourChallengingWork/img_07.png",
+          path: "./images/ourChallengingWork/img_07.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_08.jpeg",
-          path: "./images/ourChallengingWork/img_08.jpeg",
+          path: "./images/ourChallengingWork/img_08.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_09.jpeg",
-          path: "./images/ourChallengingWork/img_09.jpeg",
+          path: "./images/ourChallengingWork/img_09.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_10.jpg",
-          path: "./images/ourChallengingWork/img_10.jpg",
+          path: "./images/ourChallengingWork/img_10.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_11.jpeg",
-          path: "./images/ourChallengingWork/img_11.jpeg",
+          path: "./images/ourChallengingWork/img_11.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_12.jpeg",
-          path: "./images/ourChallengingWork/img_12.jpeg",
+          path: "./images/ourChallengingWork/img_12.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_13.jpeg",
-          path: "./images/ourChallengingWork/img_13.jpeg",
+          path: "./images/ourChallengingWork/img_13.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_14.jpeg",
-          path: "./images/ourChallengingWork/img_14.jpeg",
+          path: "./images/ourChallengingWork/img_14.webp",
           category: "ourChallengingWork",
         },
         {
           filename: "img_15.jpeg",
-          path: "./images/ourChallengingWork/img_15.jpeg",
+          path: "./images/ourChallengingWork/img_15.webp",
           category: "ourChallengingWork",
         },
 
         {
           filename: "img_01.png",
-          path: "./images/pediatricDentistry/img_01.png",
+          path: "./images/pediatricDentistry/img_01.webp",
           category: "pediatricDentistry",
         },
 
         {
           filename: "img_02.jpeg",
-          path: "./images/pediatricDentistry/img_02.jpeg",
+          path: "./images/pediatricDentistry/img_02.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_03.jpeg",
-          path: "./images/pediatricDentistry/img_03.jpeg",
+          path: "./images/pediatricDentistry/img_03.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_04.jpeg",
-          path: "./images/pediatricDentistry/img_04.jpeg",
+          path: "./images/pediatricDentistry/img_04.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_05.jpeg",
-          path: "./images/pediatricDentistry/img_05.jpeg",
+          path: "./images/pediatricDentistry/img_05.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_06.jpeg",
-          path: "./images/pediatricDentistry/img_06.jpeg",
+          path: "./images/pediatricDentistry/img_06.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_07.jpeg",
-          path: "./images/pediatricDentistry/img_07.jpeg",
+          path: "./images/pediatricDentistry/img_07.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_08.jpeg",
-          path: "./images/pediatricDentistry/img_08.jpeg",
+          path: "./images/pediatricDentistry/img_08.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_09.jpeg",
-          path: "./images/pediatricDentistry/img_09.jpeg",
+          path: "./images/pediatricDentistry/img_09.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_10.jpeg",
-          path: "./images/pediatricDentistry/img_10.jpeg",
+          path: "./images/pediatricDentistry/img_10.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_11.jpeg",
-          path: "./images/pediatricDentistry/img_11.jpeg",
+          path: "./images/pediatricDentistry/img_11.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_12.jpeg",
-          path: "./images/pediatricDentistry/img_12.jpeg",
+          path: "./images/pediatricDentistry/img_12.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_13.png",
-          path: "./images/pediatricDentistry/img_13.png",
+          path: "./images/pediatricDentistry/img_13.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_14.png",
-          path: "./images/pediatricDentistry/img_14.png",
+          path: "./images/pediatricDentistry/img_14.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_15.jpeg",
-          path: "./images/pediatricDentistry/img_15.jpeg",
+          path: "./images/pediatricDentistry/img_15.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_16.png",
-          path: "./images/pediatricDentistry/img_16.png",
+          path: "./images/pediatricDentistry/img_16.webp",
           category: "pediatricDentistry",
         },
 
         {
           filename: "img_17.jpeg",
-          path: "./images/pediatricDentistry/img_17.jpeg",
+          path: "./images/pediatricDentistry/img_17.webp",
           category: "pediatricDentistry",
         },
         {
           filename: "img_17.jpeg",
-          path: "./images/pediatricDentistry/img_17.jpeg",
+          path: "./images/pediatricDentistry/img_17.webp",
           category: "happyPatients",
         },
        
@@ -3940,22 +4115,22 @@
 
         {
           filename: "img-1.jpeg",
-          path: "./images/sterilizationHygiene/img-1.jpeg",
+          path: "./images/sterilizationHygiene/img-1.webp",
           category: "sterilizationHygiene",
         },
         {
           filename: "img-2.jpeg",
-          path: "./images/sterilizationHygiene/img-2.jpeg",
+          path: "./images/sterilizationHygiene/img-2.webp",
           category: "sterilizationHygiene",
         },
         {
           filename: "img-3.jpeg",
-          path: "./images/sterilizationHygiene/img-3.jpeg",
+          path: "./images/sterilizationHygiene/img-3.webp",
           category: "sterilizationHygiene",
         },
         {
           filename: "img-4.jpeg",
-          path: "./images/sterilizationHygiene/img-4.jpeg",
+          path: "./images/sterilizationHygiene/img-4.webp",
           category: "sterilizationHygiene",
         },
 
@@ -4081,6 +4256,9 @@
             imageItem.dataset.index = index;
             imageItem.dataset.category = category;
             imageItem.dataset.mediaType = mediaType;
+            imageItem.setAttribute("role", "button");
+            imageItem.setAttribute("tabindex", "0");
+            imageItem.setAttribute("aria-label", `Open ${mediaAlt} in full view`);
 
             // Add premium badge for every 5th image
             // const premiumBadge =
@@ -4106,6 +4284,12 @@
 
             // Add click event for lightbox - PASS THE ACTUAL IMAGE OBJECT
             imageItem.addEventListener("click", () => window.openLightbox(image));
+            imageItem.addEventListener("keydown", (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                window.openLightbox(image);
+              }
+            });
           });
 
           // Update counter
@@ -4322,6 +4506,102 @@
         updateActiveNavLink();
       }
 
+      // ===== PRODUCTS (auto-rendered from images/products) =====
+      // Default details applied to every product card. Override per-image
+      // by adding an `overrides` object (e.g. { name: "...", price: "..." }).
+      const DEFAULT_PRODUCT = {
+        name: "MR Dental Bamboo Toothbrush",
+        description:
+          "A doctor-curated, eco-conscious toothbrush designed for gentle plaque removal, sensitive gums, and a cleaner daily routine without plastic-heavy waste.",
+        rating: "5.0",
+        reviews: "128 reviews",
+        orders: "740+ orders",
+        price: "44",
+        mrp: "99",
+        discount: "56% off",
+        note: "Inclusive pricing. Current stock and final billing confirmed by clinic team.",
+      };
+
+      // To add a new product: drop its image inside "images/products/" and
+      // add its filename here.
+      const PRODUCT_IMAGES = [
+        { file: "bamboo-toothbrush.webp" },
+        { file: "limited-offer.webp" },
+      ];
+
+      function renderProducts() {
+        const grid = document.getElementById("productsGrid");
+        if (!grid) return;
+
+        grid.innerHTML = "";
+
+        PRODUCT_IMAGES.forEach((item, index) => {
+          const p = { ...DEFAULT_PRODUCT, ...(item.overrides || {}) };
+          const imgPath = `./images/products/${item.file}`;
+          const whatsappLink = "https://wa.me/919540929832?text=Hi";
+
+          const card = document.createElement("div");
+          card.className =
+            "product-card group relative bg-white rounded-2xl shadow-custom-lg border border-grey-200 overflow-hidden hover:-translate-y-2 hover:shadow-custom-xl transition-all duration-300 scroll-scale-in";
+          card.style.animationDelay = `${(index % 6) * 0.1}s`;
+
+          card.innerHTML = `
+            <div class="relative overflow-hidden bg-grey-50">
+              <img
+                src="${imgPath}"
+                alt="${p.name}"
+                class="w-full h-72 object-contain group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+              />
+              <span class="absolute top-3 left-3 bg-gradient-red-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                ${p.discount}
+              </span>
+              <span class="absolute top-3 right-3 bg-white/95 text-primary-red text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                <i class="fas fa-fire text-orange-500"></i> ${p.orders}
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-montserrat font-bold text-lg text-grey-900 mb-2">
+                ${p.name}
+              </h3>
+              <p class="text-grey-600 text-sm leading-relaxed mb-4">
+                ${p.description}
+              </p>
+
+              <div class="flex items-center gap-2 mb-4">
+                <span class="flex items-center gap-1 text-accent-gold font-bold text-sm">
+                  <i class="fas fa-star"></i> ${p.rating}
+                </span>
+                <span class="text-grey-300">•</span>
+                <span class="text-grey-500 text-sm">${p.reviews}</span>
+              </div>
+
+              <div class="flex items-end flex-wrap gap-2 mb-1">
+                <span class="text-2xl font-montserrat font-black text-primary-red">
+                  Rs. ${p.price}
+                </span>
+                <span class="text-grey-400 line-through text-base">
+                  Rs. ${p.mrp}
+                </span>
+                <span class="text-emerald-600 font-bold text-sm">${p.discount}</span>
+              </div>
+              <p class="text-xs text-grey-400 italic mb-5">${p.note}</p>
+
+              <a
+                href="${whatsappLink}"
+                target="_blank"
+                rel="noopener"
+                class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <i class="fab fa-whatsapp text-xl"></i> Order on WhatsApp
+              </a>
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+      }
+
       function updateActiveNavLink() {
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
@@ -4356,6 +4636,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         initSlider();
         initPremiumGallery();
+        renderProducts();
         checkScroll();
         window.addEventListener("scroll", handleScroll);
 
@@ -4457,6 +4738,15 @@
           });
         });
       });
+
+      // Register service worker for offline/faster repeat visits (PWA)
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("./sw.js")
+            .catch(() => {});
+        });
+      }
     </script>
   </body>
 </html>
